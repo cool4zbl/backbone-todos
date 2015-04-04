@@ -1,0 +1,142 @@
+<!-- index.html -->
+<!DOCTYPE html>
+<html lang="en">
+<head>
+	<meta charset="UTF-8">
+	<meta http-equiv="X-UA-Compatible" content="IE=edge,chrome=1">
+	<title>Todo App in Backbone.js</title>	
+	<link rel="stylesheet" href="CSS/index.css">
+	<link href='http://fonts.useso.com/css?family=Ubuntu:400,700' rel='stylesheet' type='text/css'>
+</head>
+<body>
+
+<a href="/"><div id="title">My Todos</div></a>
+
+<div id="first-wrapper">
+	<section class="todoapp">
+		<header class="header">
+		  <h1><a href="#/red/">Important&Emergency</a></h1>
+		  <input class="new-todo" placeholder="What needs to be done?" autofocus>
+		</header>
+		<section class="main">
+			<input type="checkbox" class="toggle-all">
+			<label for="toggle-all">Mark all as complete</label>
+		  
+		  <ul class="todo-list"></ul>
+
+		  <footer class="footer"></footer>
+		</section>
+	</section>
+	<div class="info">
+		<p>Double click to edit a todo</p>
+	</div>
+</div>
+
+<div id="second-wrapper">
+	<section class="todoapp">
+		<header class="header">
+		  <h1><a href="#/orange">Important&Not Emergency</a></h1>
+		  <input class="new-todo" placeholder="What needs to be done?" autofocus>
+		</header>
+		<section class="main">
+			<input type="checkbox" class="toggle-all">
+			<label for="toggle-all">Mark all as complete</label>
+		  
+		  <ul class="todo-list"></ul>
+
+		  <footer class="footer"></footer>
+		</section>
+	</section>
+	<div class="info">
+		<p>Double click to edit a todo</p>
+	</div>
+</div>
+
+<div id="third-wrapper">
+	<section class="todoapp">
+		<header class="header">
+		  <h1><a href="#/blue">Emergency&Not Important</a></h1>
+		  <input class="new-todo" placeholder="What needs to be done?" autofocus>
+		</header>
+		<section class="main">
+			<input type="checkbox" class="toggle-all">
+			<label for="toggle-all">Mark all as complete</label>
+		  
+		  <ul class="todo-list"></ul>
+
+		  <footer class="footer"></footer>
+		</section>
+	</section>
+	<div class="info">
+		<p>Double click to edit a todo</p>
+	</div>
+</div>
+
+<div id="fourth-wrapper">
+	<section class="todoapp">
+		<header class="header">
+		  <h1><a href="#/green">Not(Emergency&Important)</a></h1>
+		  <input class="new-todo" placeholder="What needs to be done?" autofocus>
+		</header>
+		<section class="main">
+			<input type="checkbox" class="toggle-all">
+			<label for="toggle-all">Mark all as complete</label>
+		  
+		  <ul class="todo-list"></ul>
+
+		  <footer class="footer"></footer>
+		</section>
+	</section>
+	<div class="info">
+		<p>Double click to edit a todo</p>
+	</div>
+</div>
+
+<div class="author">Made by <a href="http://zhangbinliu.me" target="_blank"><span> ZBL</span></a></div>
+	<!-- Templates -->
+
+	<script type="text/template" id="item-template">
+		<div class="view">
+			<input type="checkbox" class="toggle" <%= completed ? 'checked' : '' %>>
+			<label for=""><%- title %></label>
+			<button class="destroy"></button>
+		</div>
+		<input value="<%- title %>" class="edit">
+	</script>
+
+	<script type="text/template" id="stats-template">
+		<span class="todo-count"><strong><%= remaining %></strong>
+		<%= remaining === 1 ? 'item' : 'items'%> left</span>
+		<ul class="filters">
+			<li><a href="#/<%- url %>/" class="selected">ALL</a></li>
+			<li><a href="#/<%- url %>/active">Active</a></li>
+			<li><a href="#/<%- url %>/completed">Completed</a></li>
+		</ul>
+		<% if (completed) { %>
+		<button class="clear-completed">Clear Completed (<% completed %>)</button> 
+		<% } %>
+	</script>
+
+	<!-- Libraries -->
+	<!-- 	// <script src="node_modules/todomvc-common/base.js"></script> -->
+		<script src="../node_modules/jquery/dist/jquery.js"></script>
+		<script src="../node_modules/underscore/underscore.js"></script>
+		<script src="../node_modules/backbone/backbone.js"></script>
+		<script src="../node_modules/backbone.localstorage/backbone.localStorage.js"></script>
+		 <script src="js/models/todo.js"></script>
+		<!-- // <script src="js/collections/todos.js"></script> -->
+		<script src="js/collections/todosred.js"></script>
+		<script src="js/collections/todosorange.js"></script>
+		<script src="js/collections/todosblue.js"></script>
+		<script src="js/collections/todosgreen.js"></script>
+		<script src="js/views/todo-view.js"></script>
+		<script src="js/views/app-view.js"></script>
+		<script src="js/routers/router.js"></script>
+		<script src="js/app.js"></script>
+	<!-- js -->
+		<script>
+
+		</script>
+
+</body>
+</html>
